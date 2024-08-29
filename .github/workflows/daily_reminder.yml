@@ -1,1 +1,28 @@
+name: Run Python Script daily_report.py
 
+on:
+  schedule:
+    - cron: '0 12 * * *' # UTC 时间 12:00，相当于中国时间 20:00
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11' # 选择你需要的Python版本
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Python script
+      run: |
+        python daily_report.py
