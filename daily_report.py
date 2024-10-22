@@ -9,7 +9,6 @@ headers = {
 }
 
 params = {
-    # "key": "c4dbad8b-2fec-498e-b69a-a45f394eaf27"
     "key": "6157cdf4-08b7-4513-a30c-2ed9378f1c2f"
 }
 
@@ -17,7 +16,7 @@ data = {
     "msgtype": "text",
     "text": {
         "content": "别忘记提交今天的日报",
-        "mentioned_list": ["@all"],
+        "mentioned_list": ["luxiuzhe"],
     }
 }
 
